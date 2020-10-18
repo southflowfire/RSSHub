@@ -10,11 +10,25 @@ pageClass: routes
 
 <Route author="brilon" example="/21caijing/channel/readnumber" path="/21caijing/channel/:name" :paramsDesc="['频道名称，可在[https://m.21jingji.com/](https://m.21jingji.com/)页面URL中找到']"/>
 
+## ABC News
+
+### 子站
+
+<Route author="nczitzk" example="/abc/chinese" path="/abc/:site?" :paramsDesc="['子站，见下表']">
+
+子站
+
+| Just In | Politics | World | Business | Analysis             | Sport | Science | Health | Arts         | Fact Check | 中文新闻 | Berita Bahasa Indonesia | Tok Pisin |
+| ------- | -------- | ----- | -------- | -------------------- | ----- | ------- | ------ | ------------ | ---------- | -------- | ----------------------- | --------- |
+| justin  | politics | world | business | analysis-and-opinion | sport | science | health | arts-culture | factcheck  | chinese  | indonesian              | tok-pisin |
+
+</Route>
+
 ## AP News
 
 ### 话题
 
-<Route author="zoenglinghou" example="/apnews/topics/apf-topnews" path="/apnews/topics/:topic" :paramsDesc="['话题名称，可在 URL 中找到，例如 AP Top News [https://apnews.com/apf-topnews](https://apnews.com/apf-topnews) 的话题为 `apf-topnews`']" radar="1"/>
+<Route author="zoenglinghou" example="/apnews/topics/apf-topnews" path="/apnews/topics/:topic" :paramsDesc="['话题名称，可在 URL 中找到，例如 AP Top News [https://apnews.com/apf-topnews](https://apnews.com/apf-topnews) 的话题为 `apf-topnews`']" radar="1" rssbud="1"/>
 
 ## BBC
 
@@ -243,7 +257,9 @@ Category 列表:
 
 ### 新聞
 
-<Route author="Arracc" example="/yomiuri/news" path="/yomiuri/:category" :paramsDesc="['分类']">
+<Route author="Arracc" example="/yomiuri/news" path="/yomiuri/:category" :paramsDesc="['板块']">
+
+无料全文，综合页文章标题添加板块标签。
 
 | 総合 | 社会     | 政治     | 経済    | スポーツ | 国際  | 科学・ＩＴ | 選挙・世論調査 | エンタメ・文化 | 囲碁・将棋 | ライフ | 地域  | 社説      |
 | ---- | -------- | -------- | ------- | -------- | ----- | ---------- | -------------- | -------------- | ---------- | ------ | ----- | --------- |
@@ -565,9 +581,33 @@ category 对应的关键词有
 
 ### ホームページ
 
-<Route author="zjysdhr" example="/nikkei/index" path="/nikkei/index" radar="1">
+<Route author="zjysdhr" example="/nikkei/index" path="/nikkei/index" radar="1" rssbud="1">
 
 日文版首页
+
+</Route>
+
+### 新聞
+
+<Route author="Arracc" example="/nikkei/news" path="/nikkei/:category/:article_type?" :paramsDesc="['版块','文章类型，free仅无料全文，缺省为无料全文、有料非全文']">
+
+综合页文章标题添加板块标签
+
+| 総合 | マネーのまなび | 経済・金融 | 政治     | ビジネス | マネーのまなび | テクノロジー | 国際          | スポーツ | 社会・くらし | オピニオン | 文化    | FT     | 地域  | 日経ビジネス | ライフ |
+| ---- | -------------- | ---------- | -------- | -------- | -------------- | ------------ | ------------- | -------- | ------------ | ---------- | ------- | ------ | ----- | ------------ | ------ |
+| news | 未支持         | economy    | politics | business | 未支持         | technology   | international | sports   | society      | opinion    | culture | 未支持 | local | 未支持       | 未支持 |
+
+</Route>
+
+## 台湾中央通讯社
+
+### 分类
+
+<Route author="nczitzk" example="/cna/aall" path="/cna/:id?" :paramsDesc="['分类 id，见下表，默认为 aall']">
+
+| 即時 | 政治 | 國際 | 兩岸 | 產經 | 證券 | 科技 | 生活 | 社會 | 地方 | 文化 | 運動 | 娛樂 |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| aall | aipl | aopl | acn  | aie  | asc  | ait  | ahel | asoc | aloc | acul | aspt | amov |
 
 </Route>
 
@@ -605,23 +645,23 @@ category 对应的关键词有
 
 ### 热门
 
-<Route author="hoilc" example="/hk01/hot" path="/hk01/hot" radar="1"/>
+<Route author="hoilc" example="/hk01/hot" path="/hk01/hot" radar="1" rssbud="1"/>
 
 ### 栏目
 
-<Route author="hoilc" example="/hk01/zone/11" path="/hk01/zone/:id" :paramsDesc="['栏目id, 可在URL中找到']" radar="1"/>
+<Route author="hoilc" example="/hk01/zone/11" path="/hk01/zone/:id" :paramsDesc="['栏目id, 可在URL中找到']" radar="1" rssbud="1"/>
 
 ### 子栏目
 
-<Route author="hoilc" example="/hk01/channel/391" path="/hk01/channel/:id" :paramsDesc="['子栏目id, 可在URL中找到']" radar="1"/>
+<Route author="hoilc" example="/hk01/channel/391" path="/hk01/channel/:id" :paramsDesc="['子栏目id, 可在URL中找到']" radar="1" rssbud="1"/>
 
 ### 专题
 
-<Route author="hoilc" example="/hk01/issue/649" path="/hk01/issue/:id" :paramsDesc="['专题id, 可在URL中找到']" radar="1"/>
+<Route author="hoilc" example="/hk01/issue/649" path="/hk01/issue/:id" :paramsDesc="['专题id, 可在URL中找到']" radar="1" rssbud="1"/>
 
 ### 标签
 
-<Route author="hoilc" example="/hk01/tag/2787" path="/hk01/tag/:id" :paramsDesc="['标签id, 可在URL中找到']" radar="1"/>
+<Route author="hoilc" example="/hk01/tag/2787" path="/hk01/tag/:id" :paramsDesc="['标签id, 可在URL中找到']" radar="1" rssbud="1"/>
 
 ## 香港電台
 
@@ -703,7 +743,7 @@ category 对应的关键词有
 
 ### 新闻联播文字版
 
-<Route author="luyuhuang" example="/xinwenlianbo/index" path="/xinwenlianbo/index" radar="1"/>
+<Route author="luyuhuang" example="/xinwenlianbo/index" path="/xinwenlianbo/index" radar="1" rssbud="1"/>
 
 ### 新闻联播文字版全文
 
@@ -779,11 +819,23 @@ category 对应的关键词有
 
 </Route>
 
+## 中山网
+
+### 中山网新闻
+
+<Route author="laampui" example="/zsnews/index/35" path="/zsnews/index/:cateid" :paramsDesc="['类别']">
+
+| 35   | 36   | 37   | 38   | 39   |
+| ---- | ---- | ---- | ---- | ---- |
+| 本地 | 镇区 | 热点 | 社会 | 综合 |
+
+</Route>
+
 ## 中時電子報
 
 ### 新聞
 
-<Route author="luyuhuang" example="/chinatimes/realtimenews" path="/chinatimes/:caty" :paramsDesc="['类别']" radar="1">
+<Route author="luyuhuang" example="/chinatimes/realtimenews" path="/chinatimes/:caty" :paramsDesc="['类别']" radar="1" rssbud="1">
 
 | realtimenews | politic | opinion | life | star | money | society | hottopic | tube    | world | armament | chinese | fashion | sports | technologynews | travel | album |
 | ------------ | ------- | ------- | ---- | ---- | ----- | ------- | -------- | ------- | ----- | -------- | ------- | ------- | ------ | -------------- | ------ | ----- |

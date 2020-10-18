@@ -59,11 +59,11 @@ pageClass: routes
 
 ### 列表
 
-<Route author="y2361547758" example="/gov/nppa/317" path="/gov/nppa/:channel" :paramsDesc="['栏目名id']" radar="1" />
+<Route author="y2361547758" example="/gov/nppa/317" path="/gov/nppa/:channel" :paramsDesc="['栏目名id']" radar="1" rssbud="1"/>
 
 ### 详情
 
-<Route author="y2361547758" example="/gov/nppa/318/45948" path="/gov/nppa/:channel/:content" :paramsDesc="['栏目名id', '文章id']" radar="1" />
+<Route author="y2361547758" example="/gov/nppa/318/45948" path="/gov/nppa/:channel/:content" :paramsDesc="['栏目名id', '文章id']" radar="1" rssbud="1"/>
 
 ## 联合国
 
@@ -88,6 +88,12 @@ pageClass: routes
 ### 記者会見
 
 <Route author="sgqy" example="/go.jp/mofa" path="/go.jp/mofa"/>
+
+## 世界贸易组织
+
+### 争端解决新闻
+
+<Route author="nczitzk" example="/wto/dispute-settlement" path="/wto/dispute-settlement/:year?" :paramsDesc="['年份，默认为当前年份']"/>
 
 ## 苏州市人民政府
 
